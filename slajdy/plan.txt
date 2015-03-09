@@ -4,6 +4,11 @@ czym jest model?
     - bajka o odwzorowaniu rzeczywistości
     - s = vt
 
+Definicja przestrzeni, metryki, metryka: Euklidesowa, Jaccarda
+
+wprowadzić (definicja) pojęcie local i global methods, podać z nazwy przykłady
+powiedzieć, że wprowadzamy, bo będziemy tego później używać
+
 Curse of Dimensionality
     - czym jest
         * definicja
@@ -14,3 +19,39 @@ Curse of Dimensionality
         * exploding number of models
             Doświadczenie z regresją liniową
         * concurvity and mulinearity
+
+SPARSITY
+dokładniejsza definicja
+bajka o sześcianie, rozwinięcie wzoru z ogólnej części
+diagram Voronoi - bajka
+The n-dimensional volume of a Euclidean ball of radius R in n-dimensional Euclidean space is:[1]: rozwinięcie: wyprowadzić ze wzory dla n=2, n=3, wzory dla d par i npr z wiki, pokazać skórkę. Procentowo ile zajmuje żeby była pokryta połowa punktów.
+sześcian z kostkami w n= 2, n = 3
+
+EXPLODING NUMBER OF MODELS
+dokładniejsza definicja
+intuicja - obrazki Pochy
+intuicja z książki z liczeniem 
+
+CONCURVITY
+dokładniejsza definicja
+definicja przestrzeni afinicznej
+rysunek Podolaka
+
+
+Jak sobie z klątewką radzić?
+PCA
+LDA
+inna jakaś metoda zmniejszania liczby wymiarów
+
+
+
+
+
+
+
+AIC, BIC
+Jaccard?
+Przestrzenie w jakich pracujemy przy okazji mówienia, do czego jest używany ML. Bioinformatyka (DNA, fingerprinty), NLP, filmweb ma jakiś algorytm.
+
+2gi tydzień: bootstrap, cross validaition
+
