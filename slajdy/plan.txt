@@ -9,6 +9,10 @@ Definicja przestrzeni, metryki, metryka: Euklidesowa, Jaccarda
 wprowadzić (definicja) pojęcie local i global methods, podać z nazwy przykłady
 powiedzieć, że wprowadzamy, bo będziemy tego później używać
 
+“Data mining, in part, seeks to assess and minimize the effects of model uncertainty to
+help find useful models and good prediction schemes. Part of this necessitates dealing
+with the Curse.”
+
 Curse of Dimensionality
     - czym jest
         * definicja
@@ -37,6 +41,8 @@ dokładniejsza definicja
 definicja przestrzeni afinicznej
 rysunek Podolaka
 
+“The chance of multicollinearity happening purely by chance increases with p.”
+
 
 Jak sobie z klątewką radzić?
 PCA
@@ -44,10 +50,32 @@ LDA
 inna jakaś metoda zmniejszania liczby wymiarów
 
 
+Bootstrap:
+do czego jest używany?
+kiedy go można używać?
+IID
+jaki jest CEL?
+dlaczego jest fajny
+metoda (algorytm)
+
+“Hall (1992), chapters 2, 3 and 5, showed that bootstrapping outperforms the CLT when the statistic of interest is an asymptotic pivot but that otherwise the two procedures are asymptotically equivalent.”
+
+“The overall conclusion is that, when the statistic is a pivot, the bootstrap is superior, when it can be implemented, and otherwise the two are roughly equivalent theoretically. This is the main reason that the bootstrap is used so heavily in data mining to make uncertainty statements.”
 
 
+Cross Validation
+do czego służy?
+czemu bez niej są problemy?
+cel
+kiedy warto używać?
+jak się to robi - algorytm
+jak wybrać K? Fig 1.6. Nie wiem, z jakiego wzoru się liczy ten wykres...
 
+“Cross validation is a compromise between the need to fit and the need to asses a model.”
 
+bias - variance decomposition
+mean, variance, bias
+czym intuicyjnie jest bias?
 
 AIC, BIC
 Jaccard?
