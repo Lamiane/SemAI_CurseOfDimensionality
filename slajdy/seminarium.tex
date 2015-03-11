@@ -57,11 +57,17 @@ Pojęcie odnosi się do użycia formalnych struktur (maszyny) do wnioskowania (u
 \end{block}
 
 \begin{block}{Data Mining}
-Odnosi się do przeszukiwania ogromnych, wielowymiarowych, wielotypowych zbiorów danych. Dane są nieustrukturyzowane i wielorakie.
+Odnosi się do przeszukiwania ogromnych, wielowymiarowych, wielotypowych zbiorów danych. Informacje są nieustrukturyzowane i wielorakie.
 \end{block}
 \end{frame}
 
 \begin{frame}
+\begin{block}{Model}
+\begin{itemize}
+\item Odwzorowanie rzeczywistości
+\item $s = v \cdot t$
+\end{itemize}
+\end{block}
 \begin{block}{Przestrzeń}
 Przestrzeń – zbiór, w którym określone są rozmaite relacje i działania pomiędzy jego elementami
 \end{block}
@@ -92,39 +98,43 @@ $$d_J(A,B) = 1 - J(A,B) = { { |A \cup B| - |A \cap B| } \over |A \cup B| }$$
 \end{block}
 \end{frame}
 
-\section{Local vs Global Methods}
+\section{Metody Local vs Global}
 \begin{frame}
+\begin{columns}
+\column{.45\textwidth}
 \begin{block}{Local Methods}
-- K-means
+- K-means \\[0.2cm]
+\includegraphics[height=4cm]{kmeans.png}
 \end{block}
+\column{.45\textwidth}
 \begin{block}{Global Methods}
-- sieci neuronowe
+- sieci neuronowe \\[0.2cm]
+\includegraphics[height=4cm]{neuralnetwork.png}
 \end{block}
+\end{columns}
 \end{frame}
 
-\section{The Curse}
+\section{Klątwa wielowymiarowości}
 \begin{frame}
-\begin{block}{'Definicja' - Curse of Dimensionality}
+\begin{block}{'Definicja'}
 Rzeczywisty wymiar modelu jest skończony, ale rozmiar przestrzeni w której się znajduje może być nieograniczony. \\
 Trudność szacowania rośnie w sposób wykładniczy względem wymiaru.
 \end{block}
 Ekstremalny przypadek problem jest, gdy duże $p$, małe $n$, gdzie $p$ - rozmiar przestrzeni, $n$ - ilość danych.
 \begin{block}{Intuicja}
 Przy wysokim wymiarze przestrzeni, dane są zbyt rzadkie. \\
-Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośnie w sposób wykładniczy (superexponential).
+Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośnie w sposób super-wykładniczy (superexponential).
 
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{Sparsity}
-
-\end{block}
-\begin{block}{Concurvity}
-
-\end{block}
-\begin{block}{Liczba modeli}
-
+\begin{block}{Wprowadzenie pojęć}
+\begin{itemize}
+\item Sparsity
+\item Concurvity
+\item Number of Models
+\end{itemize}
 \end{block}
 
 \end{frame}
@@ -143,28 +153,59 @@ $V_{n}=\frac { \pi^{\frac{n}{2}}}{\Gamma (\frac{n}{2}+1)}\cdot r^{n} = \begin{ca
 \end{block}
 \end{frame}
 
-\section{Concurvity}
 \begin{frame}
-\begin{block}{Concurvity}
 
-\end{block}
+\begin{center}
+\includegraphics[height=9cm]{ball.png}
+\end{center}
 \end{frame}
 
 
 \section{Liczba modeli}
 \begin{frame}
-\begin{block}{Liczba modeli}
+\begin{block}{}
+Liczba modeli rośnie super-wykładniczo (superexponential) wraz ze wzrostem rozmiaru.
+\end{block}
+\begin{block}{Przykład}
+Dla $p=1$ jest 7 możliwych różnych modeli: \\
+$\mathbb{E}(Y) = \beta_0$, \\
+$\mathbb{E}(Y) = \beta_0 + \beta_1 x_1$, \\
+$\mathbb{E}(Y) = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2$, \\[0.3cm]
 
+
+$\mathbb{E}(Y) = \beta_1 x_1$, \\
+$\mathbb{E}(Y) = \beta_0 + \beta_2 x_1^2$, \\[0.3cm]
+
+
+$\mathbb{E}(Y) = \beta_2 x_1^2$, \\
+$\mathbb{E}(Y) = \beta_1 x_1 + \beta_2 x_1^2$, \\
+
+\end{block}
+\begin{block}{}
+Dla $p=2$ liczba możliwości wynosi 63.
+\end{block}
+\begin{block}{}
+Oczywistym jest, że problem się pogarsza dla wielomianów większego rzędu.
 \end{block}
 \end{frame}
 
-\section{Metody rozwiązywania problemu}
+\section{Concurvity}
+\begin{frame}
+\begin{block}{}
+Concurvity
+\end{block}
+\begin{center}
+\includegraphics[height=4.5cm]{ml-wordle.png}
+\end{center}
+\end{frame}
+
+\section{Metody radzenia sobie z problemem}
 \begin{frame}
 \begin{block}{PCA}
-
+Celem PCA jest taki obrót układu współrzędnych, aby maksymalizować w pierwszej kolejności wariancję pierwszej współrzędnej, następnie wariancję drugiej współrzędnej, itd.. 
 \end{block}
 \begin{block}{LDA}
-
+Używanie w uczeniu maszynowym do znalezienia liniowej kombinacji cech, które najlepiej rozróżniają dwie lub więcej klas obiektów lub zdarzeń. Wynikowe kombinacje są używane jako klasyfikator liniowy lub, częściej, służą redukcji wymiarów do późniejszej klasyfikacji statystycznej.
 \end{block}
 \end{frame}
 \end{document}
