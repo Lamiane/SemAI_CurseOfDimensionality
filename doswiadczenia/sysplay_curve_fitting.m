@@ -1,5 +1,6 @@
 % Code based on: http://sysplay.in/blog/tag/polynomial-curve-fitting/
 % Code shows what happens if there is not enough points in the neighbourhood
+% "If there are not enough observations in a neighborhood of some point x , then it is hard to decide what f (xx ) should be." Zhang et al.
 
 x = 0:0.9:4*pi; % dataset_x
 y = sin(x); % dataset_y

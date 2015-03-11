@@ -10,8 +10,9 @@ function v = volume(R, D)
     for i = 1:1:rows(RR)
         denominator(i,:) = RR(i,:).*PP;
     end
+    % with gamma(D) the plot is correct but it should be 1+D/2 :(
     numerator = gamma(D);
-    whos
+%      whos
     v = []
     for i = 1:1:rows(denominator)
         v(i,:)=denominator(i,:)./numerator;
