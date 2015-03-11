@@ -23,7 +23,7 @@
 
 \DeclareGraphicsExtensions{.png}
 
-\author{Agnieszka Pocha, Michał Kowalik}
+\author{Agnieszka Pocha \\ Michał Kowalik}
 \title{Klątwa wielowymiarowości \\ The Curse of Dimensionality}
 \date{11 marca 2015}
 
@@ -48,30 +48,70 @@ Bertrand Clarke, Ernest Fokoue, Hao Helen Zhang \\
 \section{AI, ML, Data Mining}
 \begin{frame}
 \begin{block}{Sztuczna Inteligencja - AI}
+\textit{W świecie, gdzie niepewność modelu jest często ograniczeniem w procedurach wnioskowania, ważniejszym stała się predykcja/przewidywanie niż testowanie czy estymacja.}... \\
+Dział informatyki zajmujący się rozwiązywaniem problemów, które nie są efektywnie algorytmizowalne
 \end{block}
 
 \begin{block}{Uczenie Maszynowe - Machine Learning}
-
+Pojęcie odnosi się do użycia formalnych struktur (maszyny) do wnioskowania (uczenie) - MODELOWANIE. Informacja tutaj pomaga zmniejszyć niepewność.
 \end{block}
 
 \begin{block}{Data Mining}
+Odnosi się do przeszukiwania ogromnych, wielowymiarowych, wielotypowych zbiorów danych. Dane są nieustrukturyzowane i wielorakie.
+\end{block}
+\end{frame}
 
+\begin{frame}
+\begin{block}{Przestrzeń}
+Przestrzeń – zbiór, w którym określone są rozmaite relacje i działania pomiędzy jego elementami
+\end{block}
+\begin{block}{Metryka}
+Metryką (w zbiorze X) nazywa się funkcję: \\
+$d: X \times X \to [0, +\infty),$
+która dla dowolnych elementów a, b, c tego zbioru spełnia następujące warunki:
+\begin{itemize}
+\item identyczność nierozróżnialnych: $d(a, b) = 0 \iff a = b$
+\item symetria: $d(a, b) = d(b, a)$
+\item warunek trójkąta: $d(a, b) \leqslant d(a, c) + d(c, b)$
+\end{itemize}
+Gdy d jest metryką w zbiorze X, to para (X, d) nazywana jest przestrzenią metryczną
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Metryka Euklidesowa}
+Ogólnie, w przestrzeni $\mathbb R^n$ metrykę euklidesową definiuje się wzorem:
+$$d_e(\mathbf x, \mathbf y) = \sqrt{(y_1 - x_1)^2 + \dots + (y_n - x_n)^2}$$
+tzn. jako pierwiastek euklidesowego iloczynu skalarnego różnicy dwóch wektorów przez siebie:
+$$d_e(\mathbf x, \mathbf y) = \sqrt{\langle \mathbf y - \mathbf x, \mathbf y - \mathbf x \rangle}$$
+\end{block}
+\begin{block}{Metryka Jaccarda}
+Metryka używana do porównywania zbiorów:
+$J(A,B) = {{|A \cap B|}\over{|A \cup B|}}$ \\
+Żeby były spełnione warunki metryki:
+$$d_J(A,B) = 1 - J(A,B) = { { |A \cup B| - |A \cap B| } \over |A \cup B| }$$
 \end{block}
 \end{frame}
 
 \section{Local vs Global Methods}
 \begin{frame}
 \begin{block}{Local Methods}
-
+- K-means
 \end{block}
 \begin{block}{Global Methods}
-
+- sieci neuronowe
 \end{block}
 \end{frame}
 
 \section{The Curse}
 \begin{frame}
-\begin{block}{'Definicja'}
+\begin{block}{'Definicja' - Curse of Dimensionality}
+Rzeczywisty wymiar modelu jest skończony, ale rozmiar przestrzeni w której się znajduje może być nieograniczony. \\
+Trudność szacowania rośnie w sposób wykładniczy względem wymiaru.
+\end{block}
+Ekstremalny przypadek problem jest, gdy duże $p$, małe $n$, gdzie $p$ - rozmiar przestrzeni, $n$ - ilość danych.
+\begin{block}{Intuicja}
+Przy wysokim wymiarze przestrzeni, dane są zbyt rzadkie. \\
+Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośnie w sposób wykładniczy (superexponential).
 
 \end{block}
 \end{frame}
@@ -80,7 +120,38 @@ Bertrand Clarke, Ernest Fokoue, Hao Helen Zhang \\
 \begin{block}{Sparsity}
 
 \end{block}
+\begin{block}{Concurvity}
+
+\end{block}
+\begin{block}{Liczba modeli}
+
+\end{block}
+
 \end{frame}
+
+\section{Sparsity}
+\begin{frame}
+\begin{block}{Motywacja}
+Jeśli nie ma zbyt wiele obiektów do porównania w sąsiedztwie jakiegoś punktu $x$, wtedy trudno określić jak powinna wyglądać funkcja $f(x)$.
+\end{block}
+\begin{block}{}
+Gdy liczba wymiarów $p$ rośnie, liczba danych lokalnych maleje do 0. 
+\end{block}
+\begin{block}{}
+Objętość kuli o promieniu $r$ maleje do 0, wraz ze wzrostem wymiaru $p$. \\
+$V_{n}=\frac { \pi^{\frac{n}{2}}}{\Gamma (\frac{n}{2}+1)}\cdot r^{n} = \begin{cases} \displaystyle {\pi^k\over k!}\cdot r^n & \mbox{dla }n=2k, \\[2ex] \displaystyle {2^k \pi^{k-1}\over n!!}\cdot r^n & \mbox{dla } n=2k-1, \end{cases}$
+\end{block}
+\end{frame}
+
+\section{Concurvity}
+\begin{frame}
+\begin{block}{Concurvity}
+
+\end{block}
+\end{frame}
+
+
+\section{Liczba modeli}
 \begin{frame}
 \begin{block}{Liczba modeli}
 
