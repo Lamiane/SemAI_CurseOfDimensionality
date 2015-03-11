@@ -49,7 +49,7 @@ Bertrand Clarke, Ernest Fokoue, Hao Helen Zhang \\
 \begin{frame}
 \begin{block}{Sztuczna Inteligencja - AI}
 \textit{W świecie, gdzie niepewność modelu jest często ograniczeniem w procedurach wnioskowania, ważniejszym stała się predykcja/przewidywanie niż testowanie czy estymacja.}... \\
-Dział informatyki zajmujący się rozwiązywaniem problemów, które nie są efektywnie algorytmizowalne
+Dział informatyki zajmujący się rozwiązywaniem problemów, które nie są efektywnie algorytmizowalne.
 \end{block}
 \pause
 \begin{block}{Uczenie Maszynowe - Machine Learning}
@@ -124,25 +124,19 @@ $$d_J(A,B) = 1 - J(A,B) = { { |A \cup B| - |A \cap B| } \over |A \cup B| }$$
 
 \section{Klątwa wielowymiarowości}
 \begin{frame}
-\begin{block}{'Definicja'}
-Rzeczywisty wymiar modelu jest skończony, ale rozmiar przestrzeni w której się znajduje może być nieograniczony. \\
-Trudność szacowania rośnie w sposób wykładniczy względem wymiaru.
-\end{block}
-Ekstremalny przypadek problem jest, gdy duże $p$, małe $n$, gdzie: \\ 
-$p$ - rozmiar przestrzeni, \\
-$n$ - ilość danych.
 \pause
 \begin{block}{Intuicja}
 Przy wysokim wymiarze przestrzeni, dane są zbyt rzadkie. \\
 Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośnie w sposób super-wykładniczy (superexponential).
 
 \end{block}
+Z ekstremalny przypadkiem mamy do czynienia, gdy przestrzeń ma wiele wymiarów $p$, a danych jest niewiele.
 \end{frame}
 
 \begin{frame}
 \begin{block}{Wprowadzenie pojęć}
 \begin{itemize}
-\item Sparsity 
+\item Rzadkość (Sparsity)
 \item Liczba możliwych modeli
 \item Concurvity
 \end{itemize}
@@ -150,7 +144,7 @@ Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośn
 
 \end{frame}
 
-\section{Sparsity}
+\section{Rzadkość}
 \begin{frame}
 \begin{block}{Motywacja}
 Jeśli nie ma zbyt wiele obiektów do porównania w sąsiedztwie jakiegoś punktu $x$, wtedy trudno określić jak powinna wyglądać funkcja $f(x)$.
@@ -200,15 +194,15 @@ Oczywistym jest, że problem się pogarsza dla wielomianów większego rzędu.
 \end{block}
 \end{frame}
 
-\section{Concurvity}
-\begin{frame}
-\begin{block}{}
-Concurvity
-\end{block}
-\begin{center}
-\includegraphics[height=4.5cm]{ml-wordle.png}
-\end{center}
-\end{frame}
+% \section{Concurvity}
+%\begin{frame}
+% \begin{block}{}
+% Concurvity
+% \end{block}
+% \begin{center}
+% \includegraphics[height=4.5cm]{ml-wordle.png}
+% \end{center}
+% \end{frame}
 
 \section{Metody radzenia sobie z problemem}
 \begin{frame}
