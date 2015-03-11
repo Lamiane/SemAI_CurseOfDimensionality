@@ -1,3 +1,6 @@
+# Ignore all files matching regex
 seminarium.*
+*.swp
+# Except this ones
 !seminarium.tex
 !seminarium.pdf

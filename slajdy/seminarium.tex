@@ -51,14 +51,20 @@ Bertrand Clarke, Ernest Fokoue, Hao Helen Zhang \\
 \textit{W świecie, gdzie niepewność modelu jest często ograniczeniem w procedurach wnioskowania, ważniejszym stała się predykcja/przewidywanie niż testowanie czy estymacja.}... \\
 Dział informatyki zajmujący się rozwiązywaniem problemów, które nie są efektywnie algorytmizowalne
 \end{block}
-
+\pause
 \begin{block}{Uczenie Maszynowe - Machine Learning}
 Pojęcie odnosi się do użycia formalnych struktur (maszyny) do wnioskowania (uczenie) - MODELOWANIE. Informacja tutaj pomaga zmniejszyć niepewność.
 \end{block}
-
+\pause
 \begin{block}{Data Mining}
 Odnosi się do przeszukiwania ogromnych, wielowymiarowych, wielotypowych zbiorów danych. Informacje są nieustrukturyzowane i wielorakie.
 \end{block}
+\end{frame}
+\begin{frame}
+
+\begin{center}
+\includegraphics[height=8cm]{aiclasification.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -68,6 +74,7 @@ Odnosi się do przeszukiwania ogromnych, wielowymiarowych, wielotypowych zbioró
 \item $s = v \cdot t$
 \end{itemize}
 \end{block}
+\pause
 \begin{block}{Przestrzeń}
 Przestrzeń – zbiór, w którym określone są rozmaite relacje i działania pomiędzy jego elementami
 \end{block}
@@ -90,6 +97,7 @@ $$d_e(\mathbf x, \mathbf y) = \sqrt{(y_1 - x_1)^2 + \dots + (y_n - x_n)^2}$$
 tzn. jako pierwiastek euklidesowego iloczynu skalarnego różnicy dwóch wektorów przez siebie:
 $$d_e(\mathbf x, \mathbf y) = \sqrt{\langle \mathbf y - \mathbf x, \mathbf y - \mathbf x \rangle}$$
 \end{block}
+\pause
 \begin{block}{Metryka Jaccarda}
 Metryka używana do porównywania zbiorów:
 $J(A,B) = {{|A \cap B|}\over{|A \cup B|}}$ \\
@@ -120,7 +128,10 @@ $$d_J(A,B) = 1 - J(A,B) = { { |A \cup B| - |A \cap B| } \over |A \cup B| }$$
 Rzeczywisty wymiar modelu jest skończony, ale rozmiar przestrzeni w której się znajduje może być nieograniczony. \\
 Trudność szacowania rośnie w sposób wykładniczy względem wymiaru.
 \end{block}
-Ekstremalny przypadek problem jest, gdy duże $p$, małe $n$, gdzie $p$ - rozmiar przestrzeni, $n$ - ilość danych.
+Ekstremalny przypadek problem jest, gdy duże $p$, małe $n$, gdzie: \\ 
+$p$ - rozmiar przestrzeni, \\
+$n$ - ilość danych.
+\pause
 \begin{block}{Intuicja}
 Przy wysokim wymiarze przestrzeni, dane są zbyt rzadkie. \\
 Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośnie w sposób super-wykładniczy (superexponential).
@@ -131,9 +142,9 @@ Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośn
 \begin{frame}
 \begin{block}{Wprowadzenie pojęć}
 \begin{itemize}
-\item Sparsity
+\item Sparsity 
+\item Liczba możliwych modeli
 \item Concurvity
-\item Number of Models
 \end{itemize}
 \end{block}
 
@@ -202,8 +213,10 @@ Concurvity
 \section{Metody radzenia sobie z problemem}
 \begin{frame}
 \begin{block}{PCA}
-Celem PCA jest taki obrót układu współrzędnych, aby maksymalizować w pierwszej kolejności wariancję pierwszej współrzędnej, następnie wariancję drugiej współrzędnej, itd.. 
+Celem PCA jest taki obrót układu współrzędnych, aby maksymalizować w pierwszej kolejności wariancję pierwszej współrzędnej, następnie wariancję drugiej współrzędnej, itd.. \\[0.3cm]
+PCA jest często używana do zmniejszania rozmiaru zbioru danych statystycznych, poprzez odrzucenie ostatnich czynników.
 \end{block}
+\pause
 \begin{block}{LDA}
 Używanie w uczeniu maszynowym do znalezienia liniowej kombinacji cech, które najlepiej rozróżniają dwie lub więcej klas obiektów lub zdarzeń. Wynikowe kombinacje są używane jako klasyfikator liniowy lub, częściej, służą redukcji wymiarów do późniejszej klasyfikacji statystycznej.
 \end{block}
