@@ -1,0 +1,85 @@
+czym jest AI, ML
+cel: co chcemy znaleźć? celem jest budowa modelu do prediction
+czym jest model?
+    - bajka o odwzorowaniu rzeczywistości
+    - s = vt
+
+Definicja przestrzeni, metryki, metryka: Euklidesowa, Jaccarda
+
+wprowadzić (definicja) pojęcie local i global methods, podać z nazwy przykłady
+powiedzieć, że wprowadzamy, bo będziemy tego później używać
+
+“Data mining, in part, seeks to assess and minimize the effects of model uncertainty to
+help find useful models and good prediction schemes. Part of this necessitates dealing
+with the Curse.”
+
+Curse of Dimensionality
+    - czym jest
+        * definicja
+    - konsekwencje
+        wymienić i krótko scharakteryzować, potem będziemy sobie każde drążyć:
+        * sparsity
+            The n-dimensional volume of a Euclidean ball of radius R in n-dimensional Euclidean space is:[1]
+        * exploding number of models
+            Doświadczenie z regresją liniową
+        * concurvity and mulinearity
+
+SPARSITY
+dokładniejsza definicja
+bajka o sześcianie, rozwinięcie wzoru z ogólnej części
+diagram Voronoi - bajka
+The n-dimensional volume of a Euclidean ball of radius R in n-dimensional Euclidean space is:[1]: rozwinięcie: wyprowadzić ze wzory dla n=2, n=3, wzory dla d par i npr z wiki, pokazać skórkę. Procentowo ile zajmuje żeby była pokryta połowa punktów.
+sześcian z kostkami w n= 2, n = 3
+
+EXPLODING NUMBER OF MODELS
+dokładniejsza definicja
+intuicja - obrazki Pochy
+intuicja z książki z liczeniem 
+
+CONCURVITY
+dokładniejsza definicja
+definicja przestrzeni afinicznej
+rysunek Podolaka
+
+“The chance of multicollinearity happening purely by chance increases with p.”
+
+
+Jak sobie z klątewką radzić?
+PCA
+LDA
+inna jakaś metoda zmniejszania liczby wymiarów
+
+
+Bootstrap:
+do czego jest używany?
+kiedy go można używać?
+IID
+jaki jest CEL?
+dlaczego jest fajny
+metoda (algorytm)
+
+“Hall (1992), chapters 2, 3 and 5, showed that bootstrapping outperforms the CLT when the statistic of interest is an asymptotic pivot but that otherwise the two procedures are asymptotically equivalent.”
+
+“The overall conclusion is that, when the statistic is a pivot, the bootstrap is superior, when it can be implemented, and otherwise the two are roughly equivalent theoretically. This is the main reason that the bootstrap is used so heavily in data mining to make uncertainty statements.”
+
+
+Cross Validation
+do czego służy?
+czemu bez niej są problemy?
+cel
+kiedy warto używać?
+jak się to robi - algorytm
+jak wybrać K? Fig 1.6. Nie wiem, z jakiego wzoru się liczy ten wykres...
+
+“Cross validation is a compromise between the need to fit and the need to asses a model.”
+
+bias - variance decomposition
+mean, variance, bias
+czym intuicyjnie jest bias?
+
+AIC, BIC
+Jaccard?
+Przestrzenie w jakich pracujemy przy okazji mówienia, do czego jest używany ML. Bioinformatyka (DNA, fingerprinty), NLP, filmweb ma jakiś algorytm.
+
+2gi tydzień: bootstrap, cross validaition
+

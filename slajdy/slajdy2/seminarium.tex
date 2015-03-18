@@ -1,0 +1,172 @@
+\documentclass[a4paper]{beamer}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{color}
+
+\graphicspath{ {./images/} }
+\usetheme{Warsaw}
+\useoutertheme{infolines}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}
+{
+\begin{beamercolorbox}{section in head/foot}
+\vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+\end{beamercolorbox}%
+}
+
+\DeclareGraphicsExtensions{.png}
+
+\author{Agnieszka Pocha \\ Michał Kowalik}
+\title{Klątwa wielowymiarowości \\ The Curse of Dimensionality \\ 2. część}
+\date{18 marca 2015}
+
+\begin {document}
+
+
+\begin{frame}
+\titlepage
+{\footnotesize
+na podstawie książki: \\
+Bertrand Clarke, Ernest Fokoue, Hao Helen Zhang \\
+}
+\textit{Principles and Theory for Data Mining and Machine Learning}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Agenda}
+\tableofcontents
+\end{frame}
+
+\section{Przypomnienie}
+\begin{frame}
+\begin{block}{Klątwa wielowymiarowości}
+Przy wysokim wymiarze przestrzeni, dane są zbyt rzadkie. \\
+Przy wysokim wymiarze przestrzeni, liczba możliwych modeli do rozważenia rośnie zbyt szybko.
+\end{block}
+\end{frame}
+
+\section{Liczba modeli}
+\begin{frame}
+\begin{block}{}
+Liczba modeli rośnie super-wykładniczo (superexponential) wraz ze wzrostem rozmiaru.
+\end{block}
+\begin{block}{Przykład}
+Dla $p=1$ jest 7 możliwych różnych modeli: \\
+$\mathbb{E}(Y) = \beta_0$, \\
+$\mathbb{E}(Y) = \beta_0 + \beta_1 x_1$, \\
+$\mathbb{E}(Y) = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2$, \\[0.3cm]
+
+
+$\mathbb{E}(Y) = \beta_1 x_1$, \\
+$\mathbb{E}(Y) = \beta_0 + \beta_2 x_1^2$, \\[0.3cm]
+
+
+$\mathbb{E}(Y) = \beta_2 x_1^2$, \\
+$\mathbb{E}(Y) = \beta_1 x_1 + \beta_2 x_1^2$, \\
+
+\end{block}
+\begin{block}{}
+Dla $p=2$ liczba możliwości wynosi 63.
+\end{block}
+\begin{block}{}
+Oczywistym jest, że problem się pogarsza dla wielomianów większego rzędu.
+\end{block}
+\end{frame}
+
+\section{PCA}
+\begin{frame}
+
+\begin{block}{Principal Component Analysis - Analiza głównych składowych}
+Celem PCA jest taki obrót układu współrzędnych, aby maksymalizować w pierwszej kolejności wariancję pierwszej współrzędnej, następnie wariancję drugiej współrzędnej, itd..
+\end{block}
+
+\begin{block}{}
+PCA jest często używana do zmniejszania rozmiaru zbioru danych statystycznych, poprzez odrzucenie ostatnich czynników.
+\end{block}
+
+\begin{block}{Wariancja}
+Klasyczna miara zmienności. Intuicyjnie utożsamiana ze zróżnicowaniem zbiorowości.
+$$ D^2(X)=E(X^2)-[E(X)]^2 $$
+$E$ - wartość oczekiwana
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Algorytm}
+\begin{itemize}
+\item Obliczenie wartości średniej dla każdej cechy: $u[m]=\frac{1}{N} \sum\limits_{n=1}^N X[m,n]$
+\item Policzenie wartości odchyleń dla każdej komórki danych: $B[i,j] := X'[i,j] =\frac{}{} X[i,j]-u[i]$
+\item Wyznaczenie macierzy kowariancji: $\mathbf{C} = \mathbb{ E } \left[ \mathbf{B} \otimes \mathbf{B} \right] = \mathbb{ E } \left[ \mathbf{B} \cdot \mathbf{B}^{T} \right] = { 1 \over N } \mathbf{B} \cdot \mathbf{B}^{T}$
+\item Policzenie wartości własnych macierzy kowariancji: $\mathbf{V}^{-1} \mathbf{C} \mathbf{V} = \mathbf{D} $ \\
+{\footnotesize wartość własna odpowiadająca temu wektorowi to skala podobieństwa tych wektorów.}\\
+gdzie $D$ jest macierzą przekątniową wartości własnych $C$.
+\item Wybór wartości własnych: można dokonać zawężenia wymiaru przestrzeni.
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Algorytm}
+\begin{itemize}
+\item Wyznaczenie wektorów własnych: $\begin{bmatrix} a_{11}-\lambda & a_{12} \cdots & a_{1n} \\ a_{21} & a_{22}-\lambda \cdots & a_{2n}\\ \vdots & \ddots & \vdots \\ a_{n1} & \cdots & a_{nn}-\lambda\end{bmatrix} \cdot \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}=0$
+\item Rzutowanie na wektory własne: \\ $y=\begin{bmatrix} y_0 \\ y_1 \\ \vdots \\ y_{n-1} \end{bmatrix}=V^T \cdot x =\begin{bmatrix} v_0^T \\ v_1^T \\ \vdots \\ v_{n-1}^T \end{bmatrix} \cdot x $, gdzie: \\
+\begin{itemize}
+\item $V$ to macierz wektorów własnych
+\item $x$ to wektor rzutowany
+\item $y$ to wektor w nowej przestrzeni
+\item $N$ to liczba wektorów własnych 
+\end{itemize}
+
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{LDA}
+\begin{frame}
+
+\end{frame}
+
+\section{Model Assesment}
+\begin{frame}
+
+\end{frame}
+
+\section{Bootstrap}
+\begin{frame}
+
+\end{frame}
+
+\section{Cross-validation}
+\begin{frame}
+
+\end{frame}
+
+\section{AIC}
+\begin{frame}
+
+\end{frame}
+
+\section{BIC}
+\begin{frame}
+
+\end{frame}
+
+\section{Bias-variance decomposition}
+\begin{frame}
+
+\end{frame}
+
+\section{Wymiar Vapnika–Chervonenkisa}
+\begin{frame}
+
+\end{frame}
+
+\end{document}
